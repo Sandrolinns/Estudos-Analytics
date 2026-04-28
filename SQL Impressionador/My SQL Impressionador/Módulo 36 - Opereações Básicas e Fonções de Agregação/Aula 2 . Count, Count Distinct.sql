@@ -1,0 +1,47 @@
+# COUNT, COUNT(*) E COUNT (DISTINCT)
+
+-- FUNÇÕES QUE REALIZAM CONTAGENS DE VALORES NAS NOSSAS TABELAS
+
+-- A ESTRUTURA SERÁ:alter
+-- SELECT
+-- COUNT (COLUNA) AS 'CONTAGEM'
+-- FROM TABELA
+
+
+# 1. COUNT
+-- A) CONTE A QUANTIDADE DE CLIENTES A PARTIR DA COLUNA DE NOME
+select *
+FROM clientes;
+
+select
+	count(Nome)as 'Qtd. Clientes'
+from clientes;
+
+
+-- B) CONTE A QUANTIDADE DE CLIENTES A PARTIR DA COLUNA DE TELEFONE
+select
+	count(Telefone)
+from clientes;
+
+-- C) HOUVE ALGUMA DIFEREÇA NOS RESLTADOS? POR QUÊ?
+
+-- TEVE DIFEREÇA DE RESULTADOS PORQUE A COUNT IGNORA OS VALORES NULOS
+
+# 2 . COUNT(*)
+-- CONTA A QUANTIDADE TOTAL DE LINHAS DA TABELA CLIENTES
+select
+	count(*)
+FROM clientes;
+
+# 3 . COUNT (DISTINCT)
+-- CONTE A QUANTIDADE DE MARCAS DISTINTAS NA TABELA PRODUTOS
+SELECT *
+from produtos;
+
+select
+	count(distinct Marca_Produto)
+from produtos;
+
+select
+	distinct Marca_Produto
+from produtos;
